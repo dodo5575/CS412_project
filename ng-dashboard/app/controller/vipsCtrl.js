@@ -39,9 +39,14 @@ app.controller('tagClassChooseCtrl', function ($scope, $rootScope, $window) {
                 chrome.tabs.executeScript(null, {file: "app/contentScript/vipsCourseInformation.js"});
         });
     };
-    $scope.vipsDomSelection = function(){
+    $scope.vipsClustering = function(){
+        chrome.tabs.executeScript(null, {file: "lib/clusterfck.js"}, function() {
+            chrome.tabs.executeScript(null, {file: "app/contentScript/vipsClustering.js"});
+        });
+    };
+    $scope.vipsExportText = function(){
         chrome.tabs.executeScript(null, {file: "lib/FileSaver.min.js"}, function() {
-            chrome.tabs.executeScript(null, {file: "app/contentScript/vipsDomSelection.js"});
+            chrome.tabs.executeScript(null, {file: "app/contentScript/vipsExportText.js"});
         });
     };
 });
