@@ -5,6 +5,7 @@ app.controller('tagClassChooseCtrl', function ($scope, $rootScope, $window) {
 	
 	chrome.tabs.executeScript(null, {file: "lib/TreeModel.js"});
 	chrome.tabs.executeScript(null, {file: "app/contentScript/vips.js"});
+//	chrome.tabs.executeScript(null, {file: "lib/node_modules/hierarchical-clustering/lib/index.js"}),
 //    var content = $window.localStorage.ClassData;
 //    $window.localStorage.ClassData = "hello world"
 //
