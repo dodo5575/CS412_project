@@ -24,7 +24,8 @@ for (var i = 0; i < globalBlocks.length; i++) {
 //var confirmed = confirm("We think the highlighted blocks are interesting data in this page. Do you want to save it?"); 
 //if (confirmed){
 var strout = textList
-filename = 'vips_' + window.location.host + '.txt';
+var filename = prompt("Please enter the output filename.");
+filename = filename + '.txt';
 var blob = new Blob([strout], {type: "text/plain;charset=utf-8"});
 saveAs(blob, filename);
 //}

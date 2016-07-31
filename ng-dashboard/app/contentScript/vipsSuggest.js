@@ -27,8 +27,7 @@ var numBlock = 0;
 for (var i = 0; i < globalBlocks.length; i++) {
 
     var box = globalBlocks[i]['-att-box'];
-    if (typeof box.cluster != 'undefined') {
-        if (box.cluster == cluster) {
+    if (box.hasOwnProperty('cluster') && box.cluster == cluster) {
             
             numBlock++;
 
@@ -43,9 +42,8 @@ for (var i = 0; i < globalBlocks.length; i++) {
             //// test
             //console.log(i, myArray[1], myArray[2], myArray[3]);
             //console.log(i, globalBlocks[i]['-vips-id']);
-        } else {
-            box.style.border = "";
-        }
+    } else {
+        box.style.border = "";
     }
 }
 
@@ -66,4 +64,5 @@ console.log("Fail, found 0 block.");
 //    saveAs(blob, filename);
 //}
 
+alert('All of the "red blocks" are in the same cluster as your selection. If you think any "red blocks" is wrong, simply click it again to remove it. After you are done, please click "Export Text Data" to save the result.');
 
